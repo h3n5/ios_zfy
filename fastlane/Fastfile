@@ -4,6 +4,7 @@ platform :ios do
   desc "Build a signed IPA"
   lane :package do
     export_method = ENV.fetch("EXPORT_METHOD", "app-store")
+    profile_name = ENV["PROVISIONING_PROFILE_NAME"]
     match_type = case export_method
                  when "app-store" then "appstore"
                  when "ad-hoc" then "adhoc"
@@ -23,6 +24,25 @@ platform :ios do
       )
     end
 
+    if profile_name && !profile_name.empty?
+      update_code_signing_settings(
+        use_automatic_signing: false,
+        path: "智服云.xcodeproj",
+        team_id: ENV.fetch("DEVELOPMENT_TEAM", "VN2RMKL923"),
+        profile_name: profile_name,
+        code_sign_identity: "Apple Distribution"
+      )
+    end
+
+    export_options = {
+      teamID: ENV.fetch("DEVELOPMENT_TEAM", "VN2RMKL923")
+    }
+    if profile_name && !profile_name.empty?
+      export_options[:provisioningProfiles] = {
+        "com.dxe.zfy" => profile_name
+      }
+    end
+
     build_app(
       workspace: "智服云.xcworkspace",
       scheme: "智服云",
@@ -31,9 +51,7 @@ platform :ios do
       output_directory: "build",
       output_name: "智服云.ipa",
       export_method: export_method,
-      export_options: {
-        teamID: ENV.fetch("DEVELOPMENT_TEAM", "VN2RMKL923")
-      }
+      export_options: export_options
     )
   end
 end
