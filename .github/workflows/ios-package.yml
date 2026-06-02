@@ -1,0 +1,41 @@
+name: Package iOS App
+
+on:
+  workflow_dispatch:
+    inputs:
+      export_method:
+        description: "Export method: app-store, ad-hoc, development, or enterprise"
+        required: true
+        default: "app-store"
+  push:
+    branches:
+      - main
+
+jobs:
+  package:
+    runs-on: macos-latest
+
+    env:
+      DEVELOPMENT_TEAM: ${{ secrets.DEVELOPMENT_TEAM || 'VN2RMKL923' }}
+      EXPORT_METHOD: ${{ github.event.inputs.export_method || 'app-store' }}
+      MATCH_GIT_URL: ${{ secrets.MATCH_GIT_URL }}
+      MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+
+      - name: Package IPA
+        run: bundle exec fastlane package
+
+      - name: Upload IPA
+        uses: actions/upload-artifact@v4
+        with:
+          name: ios-ipa
+          path: build/*.ipa
+          if-no-files-found: error

@@ -1,0 +1,2 @@
+app_identifier("com.dxe.zfy")
+team_id(ENV.fetch("DEVELOPMENT_TEAM", "VN2RMKL923"))

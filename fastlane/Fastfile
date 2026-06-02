@@ -1,0 +1,39 @@
+default_platform(:ios)
+
+platform :ios do
+  desc "Build a signed IPA"
+  lane :package do
+    export_method = ENV.fetch("EXPORT_METHOD", "app-store")
+    match_type = case export_method
+                 when "app-store" then "appstore"
+                 when "ad-hoc" then "adhoc"
+                 else export_method
+                 end
+
+    setup_ci if ENV["CI"]
+
+    cocoapods(clean_install: true) if File.exist?("Podfile")
+
+    if ENV["MATCH_GIT_URL"] && !ENV["MATCH_GIT_URL"].empty?
+      match(
+        type: match_type,
+        readonly: true,
+        app_identifier: "com.dxe.zfy",
+        git_url: ENV["MATCH_GIT_URL"]
+      )
+    end
+
+    build_app(
+      workspace: "智服云.xcworkspace",
+      scheme: "智服云",
+      configuration: "Release",
+      clean: true,
+      output_directory: "build",
+      output_name: "智服云.ipa",
+      export_method: export_method,
+      export_options: {
+        teamID: ENV.fetch("DEVELOPMENT_TEAM", "VN2RMKL923")
+      }
+    )
+  end
+end
