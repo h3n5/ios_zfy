@@ -1,0 +1,23 @@
+{
+    "CoreLocation.framework": 3,
+    "SystemConfiguration.framework": 4,
+    "libsqlite3.0.tbd": 1,
+    "CoreTelephony.framework": 4,
+    "libc++.tbd": 2,
+    "AdSupport.framework": 2,
+    "ImageIO.framework": 1,
+    "AVFoundation.framework": 2,
+    "WebKit.framework": 2,
+    "CFNetwork.framework": 1,
+    "CoreFoundation.framework": 1,
+    "Foundation.framework": 1,
+    "UIKit.framework": 1,
+    "Security.framework": 2,
+    "libz.tbd": 2,
+    "UserNotifications.framework": 1,
+    "libresolv.tbd": 1,
+    "StoreKit.framework": 1,
+    "AudioToolbox.framework": 1,
+    "ExternalAccessory.framework": 1,
+    "GLKit.framework": 1
+}
