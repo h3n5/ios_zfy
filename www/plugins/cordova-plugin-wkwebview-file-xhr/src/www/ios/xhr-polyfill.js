@@ -191,7 +191,7 @@ cordova.define("cordova-plugin-wkwebview-file-xhr.xhr-polyfill", function(requir
     reqContext.status = 404;
     reqContext.responseText = "File Not Found";
 
-    reqContext.dispatchReadyStateChangeEvent(2); // HEADERS_RECEIVED
+    reqContext.dispatchReadyStateChangeEvent(2); // HEADERS_RECIEVED
     reqContext.dispatchReadyStateChangeEvent(3); // LOADING
     reqContext.dispatchProgressEvent("progress");
 
@@ -216,7 +216,7 @@ cordova.define("cordova-plugin-wkwebview-file-xhr.xhr-polyfill", function(requir
     reqContext.statusText = "OK";
     reqContext.responseURL = reqContext.url;
 
-    reqContext.dispatchReadyStateChangeEvent(2); // HEADERS_RECEIVED
+    reqContext.dispatchReadyStateChangeEvent(2); // HEADERS_RECIEVED
     reqContext.dispatchReadyStateChangeEvent(3); // LOADING
     reqContext.dispatchProgressEvent("progress", respSize);
     reqContext.dispatchReadyStateChangeEvent(4); // DONE
@@ -655,7 +655,7 @@ cordova.define("cordova-plugin-wkwebview-file-xhr.xhr-polyfill", function(requir
 
     var respSize = rspTypeHandler.responseSize();
 
-    reqContext.dispatchReadyStateChangeEvent(2); //HEADERS_RECEIVED
+    reqContext.dispatchReadyStateChangeEvent(2); //HEADERS_RECIEVED
     reqContext.dispatchReadyStateChangeEvent(3); //LOADING
     reqContext.dispatchProgressEvent("progress", respSize);
     reqContext.dispatchReadyStateChangeEvent(4); //DONE
@@ -680,7 +680,7 @@ cordova.define("cordova-plugin-wkwebview-file-xhr.xhr-polyfill", function(requir
       reqContext.responseText = error;
     }
 
-    reqContext.dispatchReadyStateChangeEvent(2); //HEADERS_RECEIVED
+    reqContext.dispatchReadyStateChangeEvent(2); //HEADERS_RECIEVED
     reqContext.dispatchReadyStateChangeEvent(3); //LOADING
     reqContext.dispatchProgressEvent("progress");
     reqContext.dispatchReadyStateChangeEvent(4); //DONE
@@ -782,7 +782,7 @@ cordova.define("cordova-plugin-wkwebview-file-xhr.xhr-polyfill", function(requir
   DelegateHandler._readystatechangeEventRelay = function (reqContext, delegate, event)
   {
 
-    if (delegate.readyState > 1)  // readyState gt HEADERS_RECEIVED
+    if (delegate.readyState > 1)  // readyState gt HEADERS_RECIEVED
     {
       if (Object.keys(reqContext.responseHeaders).length === 0)
         DelegateHandler._parseResponseHeaders(delegate, reqContext.responseHeaders);
@@ -1020,7 +1020,7 @@ cordova.define("cordova-plugin-wkwebview-file-xhr.xhr-polyfill", function(requir
 
 
   // define readonly const properties
-  ["UNSENT", "OPENED", "HEADERS_RECEIVED", "LOADING", "DONE"].forEach(function (propName, i)
+  ["UNSENT", "OPENED", "HEADERS_RECIEVED", "LOADING", "DONE"].forEach(function (propName, i)
   {
     Object.defineProperty(window.XMLHttpRequest.prototype, propName,
       {

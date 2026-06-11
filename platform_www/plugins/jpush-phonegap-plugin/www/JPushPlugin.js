@@ -6,6 +6,7 @@ var JPushPlugin = function() {};
 JPushPlugin.prototype.receiveMessage = {};
 JPushPlugin.prototype.openNotification = {};
 JPushPlugin.prototype.receiveNotification = {};
+JPushPlugin.prototype.notifyButtonClick = {};
 
 JPushPlugin.prototype.isPlatformIOS = function() {
   return (
@@ -58,6 +59,12 @@ JPushPlugin.prototype.setDebugMode = function(mode) {
       this.setLogOFF();
     }
   }
+};
+
+JPushPlugin.prototype.setDataInsightsEnable = function(mode) {
+  if (device.platform === "Android") {
+    this.callNative("setDataInsightsEnable", [mode], null);
+  } 
 };
 
 JPushPlugin.prototype.getRegistrationID = function(successCallback) {
@@ -370,6 +377,28 @@ JPushPlugin.prototype.receiveMessageInAndroidCallback = function(data) {
   this.receiveMessage = JSON.parse(data);
   cordova.fireDocumentEvent("jpush.receiveMessage", this.receiveMessage);
 };
+JPushPlugin.prototype.receiveInAppMessageClickCallback = function(data) {
+  if (device.platform === "Android") {
+      data = JSON.stringify(data);
+      this.receiveMessage = JSON.parse(data);
+      cordova.fireDocumentEvent("jpush.receiveInAppMessageClick", this.receiveMessage);
+  }
+};
+JPushPlugin.prototype.receiveInAppMessageShowCallback = function(data) {
+  if (device.platform === "Android") {
+      data = JSON.stringify(data);
+      this.receiveMessage = JSON.parse(data);
+      cordova.fireDocumentEvent("jpush.receiveInAppMessageShow", this.receiveMessage);
+  }
+};
+
+JPushPlugin.prototype.receiveNotifyButtonClickCallback = function(data) {
+  if (device.platform === "Android") {
+      data = JSON.stringify(data);
+      this.notifyButtonClick = JSON.parse(data);
+      cordova.fireDocumentEvent("jpush.receiveNotifyButtonClick", this.notifyButtonClick);
+  }
+};
 
 JPushPlugin.prototype.openNotificationInAndroidCallback = function(data) {
   data = JSON.stringify(data);
@@ -483,6 +512,13 @@ JPushPlugin.prototype.setBadgeNumber = function(badgeNumb) {
   }
 };
 
+//设备是否同意隐私协议
+JPushPlugin.prototype.setAuth = function(isAuth){
+    if(device.platform === "Android"){
+        this.callNative("setAuth", [isAuth], null);
+    }
+}
+
 /**
  * 设置手机号。
  *
@@ -495,6 +531,17 @@ JPushPlugin.prototype.setBadgeNumber = function(badgeNumb) {
 ) {
      this.callNative("setMobileNumber", [params], successCallback, errorCallback);
 
+};
+
+/**
+ * 设置进入后台是否允许长连接 (iOS 5.9.0+)
+ *
+ * @param isEnable boolean 是否允许长连接
+ */
+JPushPlugin.prototype.setBackgroundEnable = function(isEnable) {
+  if (this.isPlatformIOS()) {
+    this.callNative("setBackgroundEnable", [isEnable], null);
+  }
 };
 
 if (!window.plugins) {

@@ -1,6 +1,22 @@
 cordova.define('cordova/plugin_list', function(require, exports, module) {
   module.exports = [
     {
+      "id": "cordova-hot-code-push-plugin.chcp",
+      "file": "plugins/cordova-hot-code-push-plugin/www/chcp.js",
+      "pluginId": "cordova-hot-code-push-plugin",
+      "clobbers": [
+        "chcp"
+      ]
+    },
+    {
+      "id": "cordova-plugin-android-permissions.Permissions",
+      "file": "plugins/cordova-plugin-android-permissions/www/permissions-dummy.js",
+      "pluginId": "cordova-plugin-android-permissions",
+      "clobbers": [
+        "cordova.plugins.permissions"
+      ]
+    },
+    {
       "id": "cordova-plugin-app-launcher.Launcher",
       "file": "plugins/cordova-plugin-app-launcher/www/Launcher.js",
       "pluginId": "cordova-plugin-app-launcher",
@@ -17,13 +33,11 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
       ]
     },
     {
-      "id": "cordova-plugin-baidumaplocation.baidumap_location",
-      "file": "plugins/cordova-plugin-baidumaplocation/www/baidumap_location.js",
-      "pluginId": "cordova-plugin-baidumaplocation",
+      "id": "cordova-plugin-call-number.CallNumber",
+      "file": "plugins/cordova-plugin-call-number/www/CallNumber.js",
+      "pluginId": "cordova-plugin-call-number",
       "clobbers": [
-        "cordova.plugins.baidumap_location",
-        "plugin.baidumap_location",
-        "baidumap_location"
+        "call"
       ]
     },
     {
@@ -264,6 +278,14 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
       ]
     },
     {
+      "id": "cordova-plugin-gaodelocation-chenyu.GaoDe",
+      "file": "plugins/cordova-plugin-gaodelocation-chenyu/www/GaoDeLocation.js",
+      "pluginId": "cordova-plugin-gaodelocation-chenyu",
+      "clobbers": [
+        "GaoDe"
+      ]
+    },
+    {
       "id": "cordova-plugin-geolocation.Coordinates",
       "file": "plugins/cordova-plugin-geolocation/www/Coordinates.js",
       "pluginId": "cordova-plugin-geolocation",
@@ -304,11 +326,11 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
       ]
     },
     {
-      "id": "cordova-plugin-inappbrowser.inappbrowser",
-      "file": "plugins/cordova-plugin-inappbrowser/www/inappbrowser.js",
-      "pluginId": "cordova-plugin-inappbrowser",
+      "id": "cordova-plugin-jcore.JCorePlugin",
+      "file": "plugins/cordova-plugin-jcore/www/jcore.js",
+      "pluginId": "cordova-plugin-jcore",
       "clobbers": [
-        "cordova.InAppBrowser.open"
+        "JCore"
       ]
     },
     {
@@ -352,6 +374,61 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
       ]
     },
     {
+      "id": "jpush-phonegap-plugin.JPushPlugin",
+      "file": "plugins/jpush-phonegap-plugin/www/JPushPlugin.js",
+      "pluginId": "jpush-phonegap-plugin",
+      "clobbers": [
+        "JPush"
+      ]
+    },
+    {
+      "id": "phonegap-plugin-barcodescanner.BarcodeScanner",
+      "file": "plugins/phonegap-plugin-barcodescanner/www/barcodescanner.js",
+      "pluginId": "phonegap-plugin-barcodescanner",
+      "clobbers": [
+        "cordova.plugins.barcodeScanner"
+      ]
+    },
+    {
+      "id": "@hmscore/cordova-plugin-hms-scan.HMSScan",
+      "file": "plugins/@hmscore/cordova-plugin-hms-scan/www/HMSScan.js",
+      "pluginId": "@hmscore/cordova-plugin-hms-scan",
+      "clobbers": [
+        "HMSScan"
+      ]
+    },
+    {
+      "id": "@hmscore/cordova-plugin-hms-scan.CustomView",
+      "file": "plugins/@hmscore/cordova-plugin-hms-scan/www/CustomView.js",
+      "pluginId": "@hmscore/cordova-plugin-hms-scan",
+      "clobbers": [
+        "CustomView"
+      ]
+    },
+    {
+      "id": "@hmscore/cordova-plugin-hms-scan.MultiProcessor",
+      "file": "plugins/@hmscore/cordova-plugin-hms-scan/www/MultiProcessor.js",
+      "pluginId": "@hmscore/cordova-plugin-hms-scan",
+      "clobbers": [
+        "MultiProcessor"
+      ]
+    },
+    {
+      "id": "@hmscore/cordova-plugin-hms-scan.interfaces",
+      "file": "plugins/@hmscore/cordova-plugin-hms-scan/www/interfaces.js",
+      "pluginId": "@hmscore/cordova-plugin-hms-scan"
+    },
+    {
+      "id": "@hmscore/cordova-plugin-hms-scan.index",
+      "file": "plugins/@hmscore/cordova-plugin-hms-scan/www/index.js",
+      "pluginId": "@hmscore/cordova-plugin-hms-scan"
+    },
+    {
+      "id": "@hmscore/cordova-plugin-hms-scan.util",
+      "file": "plugins/@hmscore/cordova-plugin-hms-scan/www/util.js",
+      "pluginId": "@hmscore/cordova-plugin-hms-scan"
+    },
+    {
       "id": "cordova-plugin-wkwebview-engine.ios-wkwebview-exec",
       "file": "plugins/cordova-plugin-wkwebview-engine/src/www/ios/ios-wkwebview-exec.js",
       "pluginId": "cordova-plugin-wkwebview-engine",
@@ -392,54 +469,42 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
       "runs": true
     },
     {
-      "id": "jpush-phonegap-plugin.JPushPlugin",
-      "file": "plugins/jpush-phonegap-plugin/www/JPushPlugin.js",
-      "pluginId": "jpush-phonegap-plugin",
+      "id": "cordova-plugin-inappbrowser.inappbrowser",
+      "file": "plugins/cordova-plugin-inappbrowser/www/inappbrowser.js",
+      "pluginId": "cordova-plugin-inappbrowser",
       "clobbers": [
-        "JPush"
-      ]
-    },
-    {
-      "id": "phonegap-plugin-barcodescanner.BarcodeScanner",
-      "file": "plugins/phonegap-plugin-barcodescanner/www/barcodescanner.js",
-      "pluginId": "phonegap-plugin-barcodescanner",
-      "clobbers": [
-        "cordova.plugins.barcodeScanner"
-      ]
-    },
-    {
-      "id": "cordova-plugin-gaodelocation-chenyu.GaoDe",
-      "file": "plugins/cordova-plugin-gaodelocation-chenyu/www/GaoDeLocation.js",
-      "pluginId": "cordova-plugin-gaodelocation-chenyu",
-      "clobbers": [
-        "GaoDe"
+        "cordova.InAppBrowser.open"
       ]
     }
   ];
   module.exports.metadata = {
-    "cordova-android-support-gradle-release": "3.0.1",
-    "cordova-plugin-add-swift-support": "2.0.2",
+    "cordova-hot-code-push-plugin": "1.5.3",
+    "cordova-plugin-advanced-geolocation": "1.6.2",
+    "cordova-plugin-android-permissions": "1.1.5",
     "cordova-plugin-app-launcher": "0.4.0",
     "cordova-plugin-app-version": "0.1.9",
-    "cordova-plugin-baidumaplocation": "4.0.3",
-    "cordova-plugin-camera": "6.0.0",
+    "cordova-plugin-call-number": "1.0.1",
+    "cordova-plugin-camera": "4.0.3",
     "cordova-plugin-device": "2.0.2",
     "cordova-plugin-file": "6.0.1",
     "cordova-plugin-file-opener2": "3.0.5",
     "cordova-plugin-file-transfer": "1.7.1",
-    "cordova-plugin-geolocation": "4.0.1",
+    "cordova-plugin-filepath": "1.6.0",
+    "cordova-plugin-gaodelocation-chenyu": "2.0.7",
+    "cordova-plugin-geolocation": "5.0.0",
     "cordova-plugin-imagepicker": "1.2.2",
-    "cordova-plugin-inappbrowser": "4.1.0",
-    "cordova-plugin-jcore": "1.4.1",
+    "cordova-plugin-jcore": "5.2.0",
     "cordova-plugin-keyboard": "1.2.0",
     "cordova-plugin-network-information": "3.0.0",
-    "cordova-plugin-splashscreen": "5.0.4",
-    "cordova-plugin-statusbar": "3.0.0",
+    "cordova-plugin-splashscreen": "5.0.2",
+    "cordova-plugin-statusbar": "2.4.2",
     "cordova-plugin-whitelist": "1.3.3",
-    "cordova-plugin-wkwebview-engine": "1.2.2",
-    "cordova-plugin-wkwebview-file-xhr": "3.0.0",
-    "jpush-phonegap-plugin": "3.8.2",
+    "jpush-phonegap-plugin": "5.9.0",
     "phonegap-plugin-barcodescanner": "8.1.0",
-    "cordova-plugin-gaodelocation-chenyu": "2.0.4"
+    "@hmscore/cordova-plugin-hms-scan": "2.12.0-304",
+    "cordova-plugin-add-swift-support": "2.0.2",
+    "cordova-plugin-wkwebview-engine": "1.2.1",
+    "cordova-plugin-wkwebview-file-xhr": "2.1.4",
+    "cordova-plugin-inappbrowser": "4.0.0"
   };
 });

@@ -2,7 +2,7 @@
 
 platform :ios, '10.0'
 
-target '智服云' do
-	project '智服云.xcodeproj'
+target '若航净水' do
+	project '若航净水.xcodeproj'
 
 end

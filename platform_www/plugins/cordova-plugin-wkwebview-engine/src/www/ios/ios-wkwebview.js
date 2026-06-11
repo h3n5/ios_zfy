@@ -18,7 +18,7 @@ cordova.define("cordova-plugin-wkwebview-engine.ios-wkwebview", function(require
  * specific language governing permissions and limitations
  * under the License.
  *
- */
+*/
 
 var exec = require('cordova/exec');
 
