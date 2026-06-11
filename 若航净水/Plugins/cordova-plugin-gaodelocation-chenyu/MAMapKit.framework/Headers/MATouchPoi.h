@@ -1,25 +1,3 @@
-//
-//  MATouchPoi.h
-//  MapKit_static
-//
-//  Created by songjian on 13-7-17.
-//  Copyright © 2016 Amap. All rights reserved.
-//
-
-#import "MAConfig.h"
-#import <Foundation/Foundation.h>
-#import <CoreLocation/CoreLocation.h>
-
-///MATouchPoi 定义
-@interface MATouchPoi : NSObject
-
-///名称
-@property (nonatomic, copy, readonly) NSString *name;
-
-///经纬度坐标
-@property (nonatomic, assign, readonly) CLLocationCoordinate2D coordinate;
-
-///poi的ID
-@property (nonatomic, copy, readonly) NSString *uid;
-
-@end
+version https://git-lfs.github.com/spec/v1
+oid sha256:05b8bf9a881aa2ceaf02b52019580c6fd47495fcf381c7fc9a2818978b33d8ae
+size 535

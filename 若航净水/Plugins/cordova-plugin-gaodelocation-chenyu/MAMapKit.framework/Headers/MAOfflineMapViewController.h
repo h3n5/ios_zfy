@@ -1,22 +1,3 @@
-//
-//  MAOfflineMapViewController.h
-//  MAMapKit
-//
-//  Created by hanxiaoming on 2017/12/14.
-//  Copyright © 2017年 Amap. All rights reserved.
-//
-
-#import <UIKit/UIKit.h>
-
-#import "MAOfflineMap.h"
-
-///离线地图ViewController（since 5.7.0）
-@interface MAOfflineMapViewController : UIViewController
-
-/// MAOfflineMapViewController单例，请使用单例以保证离线地图状态正确同步。
-+ (instancetype)sharedInstance;
-
-///MAOfflineMap实例
-@property (nonatomic, readonly) MAOfflineMap *offlineMap;
-
-@end
+version https://git-lfs.github.com/spec/v1
+oid sha256:81efaf3eac493001da8eb3fbc65f84927ab0a0e7ee1228d2dbb510bb1f9269f7
+size 544

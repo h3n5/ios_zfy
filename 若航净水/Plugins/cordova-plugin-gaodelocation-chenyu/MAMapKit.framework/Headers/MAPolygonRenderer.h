@@ -1,27 +1,3 @@
-//
-//  MAPolygonRenderer.h
-//  MAMapKit
-//
-//  
-//  Copyright (c) 2011年 Amap. All rights reserved.
-//
-
-#import "MAConfig.h"
-#import <UIKit/UIKit.h>
-#import "MAPolygon.h"
-#import "MAOverlayPathRenderer.h"
-
-///此类用于绘制MAPolygon,可以通过MAOverlayPathRenderer修改其fill和stroke attributes
-@interface MAPolygonRenderer : MAOverlayPathRenderer
-
-///关联的MAPolygon model
-@property (nonatomic, readonly) MAPolygon *polygon;
-
-/**
- * @brief 根据指定的多边形生成一个多边形Renderer
- * @param polygon polygon 指定的多边形数据对象
- * @return 新生成的多边形Renderer
- */
-- (instancetype)initWithPolygon:(MAPolygon *)polygon;
-
-@end
+version https://git-lfs.github.com/spec/v1
+oid sha256:e265214eb6632322aca8fc2fe0ce8fa2ac7ec7aa744980671160e0530dc15d86
+size 697

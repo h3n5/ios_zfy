@@ -1,23 +1,3 @@
-//
-//  MAOfflineItemCommonCity.h
-//  MapKit_static
-//
-//  Created by songjian on 14-4-23.
-//  Copyright © 2016 Amap. All rights reserved.
-//
-
-#import "MAConfig.h"
-
-#if MA_INCLUDE_OFFLINE
-
-#import "MAOfflineCity.h"
-
-///普通城市
-@interface MAOfflineItemCommonCity : MAOfflineCity
-
-///所属省份
-@property (nonatomic, weak) MAOfflineItem *province;
-
-@end
-
-#endif
+version https://git-lfs.github.com/spec/v1
+oid sha256:5f1bb1325096ef5fe4e4a7b425afab175eeb6246831a4ea98f85e34b40dff764
+size 390

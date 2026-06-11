@@ -1,6 +1,3 @@
-framework module MAMapKit {
-  umbrella header "MAMapKit.h"
-
-  export *
-  module * { export * }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:e404ae4cb9a9763fd67cb7f69249ae946adf5b606206523d23adf4b1e5591a87
+size 103

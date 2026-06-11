@@ -1,1 +1,2 @@
 *.sh text eol=lf
+若航净水/Plugins/cordova-plugin-gaodelocation-chenyu/MAMapKit.framework/** filter=lfs diff=lfs merge=lfs -text

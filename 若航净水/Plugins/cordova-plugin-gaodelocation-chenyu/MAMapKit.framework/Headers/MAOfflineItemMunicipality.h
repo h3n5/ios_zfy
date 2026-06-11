@@ -1,20 +1,3 @@
-//
-//  MAOfflineItemMunicipality.h
-//  MapKit_static
-//
-//  Created by songjian on 14-4-23.
-//  Copyright © 2016 Amap. All rights reserved.
-//
-
-#import "MAConfig.h"
-
-#if MA_INCLUDE_OFFLINE
-
-#import "MAOfflineCity.h"
-
-///直辖市
-@interface MAOfflineItemMunicipality : MAOfflineCity
-
-@end
-
-#endif
+version https://git-lfs.github.com/spec/v1
+oid sha256:4f539ac4fb245646ca29dc0110a41f8d43ed58b57ed2074dd4f9a7f1d8c6930a
+size 318

@@ -1,9 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<config>
-	<dirs>
-		<data>./data/</data>
-		<diff>./diff/</diff>
-		<res>./res/</res>
-		<log>./log/</log>
-	</dirs>
-</config>
+version https://git-lfs.github.com/spec/v1
+oid sha256:5cb43dff5c9f0a06a0fadc1f976d12741e392f7e957d8df5429443ca3d641663
+size 170

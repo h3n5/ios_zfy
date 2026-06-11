@@ -1,20 +1,3 @@
-//
-//  MAOfflineItemNationWide.h
-//  MapKit_static
-//
-//  Created by songjian on 14-4-23.
-//  Copyright © 2016 Amap. All rights reserved.
-//
-
-#import "MAConfig.h"
-
-#if MA_INCLUDE_OFFLINE
-
-#import "MAOfflineCity.h"
-
-///全国概要
-@interface MAOfflineItemNationWide : MAOfflineCity
-
-@end
-
-#endif
+version https://git-lfs.github.com/spec/v1
+oid sha256:a2b0d28282091ccdbc3e56cbb9c82382763aea360a0cabe8efe665ae2b8fa2a1
+size 317

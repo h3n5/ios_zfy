@@ -1,23 +1,3 @@
-//
-//  MAOverlay.h
-//  MAMapKit
-//
-//  
-//  Copyright (c) 2011年 Amap. All rights reserved.
-//
-
-#import "MAConfig.h"
-#import "MAAnnotation.h"
-#import "MAGeometry.h"
-
-///该类是地图覆盖物的基类，所有地图的覆盖物需要继承自此类
-@protocol MAOverlay <MAAnnotation>
-@required
-
-///返回区域中心坐标
-@property (nonatomic, readonly) CLLocationCoordinate2D coordinate;
-
-///区域外接矩形
-@property (nonatomic, readonly) MAMapRect boundingMapRect;
-
-@end
+version https://git-lfs.github.com/spec/v1
+oid sha256:161df55cec015cee1ac6c2318bc45ef66b1c8864a966a8d84cc3307f391f98d6
+size 504
